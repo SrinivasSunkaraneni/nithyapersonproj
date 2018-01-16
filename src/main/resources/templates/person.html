@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Person</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div class="page-header" id="banner">
+    
+    <!-- 
+    		<form action="/saveperson" method="post" enctype="text/plain">
+    		    		  <h1> Add new person</h1>
+    		  <table>
+                    <tr>
+                        <td>First Name</td>
+                        <td><input type="text" name="firstName"/></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><input type="text" name="lastName"/></td>
+                   </tr>
+    		  </table>
+    		  <input type="submit"/>
+    		</form>
+    		 -->
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6" id="test">
+                <h1>Person Data</h1>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="person : ${persons}">
+                        <td th:text="${person.userId}"></td>
+                        <td th:text="${person.firstName}"></td>
+                        <td th:text="${person.lastName}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 col-md-7 col-sm-6" id="test">
+                <h1>Person Data With Last Name Kota</h1>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="person : ${personswithkota}">
+                        <td th:text="${person.userId}"></td>
+                        <td th:text="${person.firstName}"></td>
+                        <td th:text="${person.lastName}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
